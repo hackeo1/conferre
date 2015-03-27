@@ -1,7 +1,7 @@
 Conferre
 
 Language: Java;
-Framework: Spring ;
+Framework: Spring;
 IDE: Spring Tool Suite.
 
 Team:
@@ -12,4 +12,4 @@ Juan Pablo Sanchez Callejas;
 Andres Felipe Tirado Alvarez.
 
 Special Thanks to:
-Lenin David Lozano Argel .
+Lenin David Lozano Argel.
