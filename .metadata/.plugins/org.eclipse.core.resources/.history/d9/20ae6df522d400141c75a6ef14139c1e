@@ -1,0 +1,40 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import java.util.UUID;
+
+import co.com.eafit.conferre.conferencias.data.dac.ConferenciaDAO;
+import co.com.eafit.conferre.conferencias.data.to.ConferenciaTO;
+import co.com.eafit.conferre.generics.FactoryDAO;
+import co.com.eafit.conferre.generics.GenericDTO;
+import co.com.eafit.conferre.support.ExceptionUnitOfWork;
+import co.com.eafit.conferre.support.ExceptionValidation;
+
+public class CrearConferenciaUseCase implements UnitOfWork {
+
+	@Override
+	public GenericDTO ejecutar(GenericDTO parametros) throws ExceptionUnitOfWork {
+		ConferenciaTO conferenciaTO = (ConferenciaTO) parametros;
+		ConferenciaTO resultado = null;
+		try {
+			
+			validarDatosConferencia(conferenciaTO);
+			ConferenciaDAO conferenciaDAO = FactoryDAO.createConferenciaDAO();
+			UUID id = UUID.randomUUID();
+			conferenciaTO.setId(id.toString());
+			resultado = (ConferenciaTO) conferenciaDAO.crear(conferenciaTO);
+			
+		} catch (ExceptionValidation e) {
+			throw new ExceptionUnitOfWork(e);
+		}
+		
+		return resultado;
+	}
+
+	private void validarDatosConferencia(ConferenciaTO conferenciaTO) throws ExceptionValidation{
+		if(conferenciaTO.getNombre() == null){
+			throw new ExceptionValidation("El nombre de la conferencia no puede ser nulo");
+		}
+		
+	}
+
+}

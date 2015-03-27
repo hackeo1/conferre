@@ -1,0 +1,23 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import co.com.eafit.conferre.data.to.ConferenciaTO;
+
+
+public class RestConferenciaFacade implements ConferenciasFacade {
+
+	@Path("/")
+	@POST
+	@Consumes("application/json")
+	@Produces("application/json")
+	public ConferenciaTO crearConferencia(ConferenciaTO conferencia) {
+		CreateConferenciaUseCase useCase = new CreateConferenciaUseCase();
+		ConferenciaTO conferenciaResult = null;
+		try {
+			conferenciaResult = (ConferenciaTO) useCase.ejecutar(conferencia);
+		} catch (Exception e) {
+			
+		}
+		return conferenciaResult;
+	}
+
+}
