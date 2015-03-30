@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=Conferre_Support/src&lt;co.com.eafit.conferre.generics{GenericDAO.java[GenericDAO" modifiers="513" timestamp="1427421976469"/>
+<typeInfo handle="=Conferre_Support/C:\/Program Files\/Java\/jre1.8.0_31\/lib\/rt.jar&lt;java.lang.reflect(GenericDeclaration.class[GenericDeclaration" modifiers="1537" timestamp="1422330477572"/>
+<typeInfo handle="=Conferre_Support/src&lt;co.com.eafit.conferre.generics{GenericDTO.java[GenericDTO" modifiers="513" timestamp="1427420606703"/>
+<typeInfo handle="=Conferre_Business/C:\/Program Files\/Java\/jre1.8.0_31\/lib\/rt.jar&lt;javax.lang.model.type(UnionType.class[UnionType" modifiers="1537" timestamp="1422330477572"/>
+<typeInfo handle="=Conferre_Support/src&lt;co.com.eafit.conferre.generics{UnitOfWork.java[UnitOfWork" modifiers="513" timestamp="1427421832961"/>
+</typeInfoHistroy>

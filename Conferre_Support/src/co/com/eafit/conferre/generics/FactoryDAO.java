@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import co.com.eafit.conferre.conferencias.data.dac.ConferenciaDAO;
+import co.com.eafit.conferre.conferencias.data.dac.EspacioDAO;
+import co.com.eafit.conferre.conferencias.data.dac.SillaDAO;
 
 public class FactoryDAO {
 	
@@ -14,7 +16,15 @@ public class FactoryDAO {
 		return new ConferenciaDAO(conn);
 	}
 	
-	// agregar  lo de ↑ pero para todos (lo de ↑ es para conferencia)
+	public static EspacioDAO createEspacioDAO(){
+		Connection conn = createConnection();
+		return new EspacioDAO(conn);
+	}
+	
+	public static SillaDAO createSillaDAO(){
+		Connection conn = createConnection();
+		return new SillaDAO(conn);
+	}
 	
 	public static Connection createConnection(){
 		Driver driver;

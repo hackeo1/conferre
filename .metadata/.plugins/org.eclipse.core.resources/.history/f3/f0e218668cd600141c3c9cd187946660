@@ -1,0 +1,18 @@
+package co.com.eafit.conferre.conferencia.web.model;
+
+import java.util.Date;
+import java.util.List;
+
+public class Conferencia {
+	private String nombre;
+	private String nombreConferencista;
+	private String tipo;
+	private Date fecha;
+	private int sillasDisponibles;
+	private List<Silla> sillas;
+	private Espacio espacio;
+	private String id;
+	
+	
+	
+}

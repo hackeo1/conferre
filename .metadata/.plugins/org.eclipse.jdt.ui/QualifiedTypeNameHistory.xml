@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.data.to.EspacioTO"/>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.data.to.SillaTO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.conferencias.data.dac.EspacioDAO"/>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.conferencias.data.dac.SillaDAO"/>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.conferencia.web.model.Silla"/>
+<fullyQualifiedTypeName name="co.com.eafit.conferre.conferencia.web.model.Conferencia"/>
+</qualifiedTypeNameHistroy>

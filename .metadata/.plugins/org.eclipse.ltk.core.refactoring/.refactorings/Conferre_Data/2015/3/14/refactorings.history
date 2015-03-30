@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;co.com.eafit.conferre.conferencias.data.dac.SillasDAO&apos; to &apos;SillaDAO&apos;&#x0D;&#x0A;- Original project: &apos;Conferre_Data&apos;&#x0D;&#x0A;- Original element: &apos;co.com.eafit.conferre.conferencias.data.dac.SillasDAO&apos;&#x0D;&#x0A;- Renamed element: &apos;co.com.eafit.conferre.conferencias.data.dac.SillaDAO&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SillasDAO&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;co.com.eafit.conferre.conferencias.data.dac{SillasDAO.java[SillasDAO" matchStrategy="1" name="SillaDAO" qualified="false" references="true" similarDeclarations="false" stamp="1427686401983" textual="false" version="1.0"/>
+</session>
