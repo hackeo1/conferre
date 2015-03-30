@@ -1,0 +1,39 @@
+package co.com.eafit.conferre.conferencia.web;
+
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+
+import co.com.eafit.conferre.conferencia.web.model.Conferencia;
+import co.com.eafit.conferre.conferencia.web.model.Espacio;
+import co.com.eafit.conferre.conferencias.business.ConferenciasFacade;
+
+@ManagedBean
+public class ListConferenciasView {
+	private List<Conferencia> conferencias;
+	private ConferenciasFacade confFacade;
+	
+	@PostConstruct
+	public void init(){
+		conferencias = confFacade.obtenerConferencia();
+	}
+
+	public List<Conferencia> getConferencias() {
+		return conferencias;
+	}
+
+	public void setConferencias(List<Conferencia> conferencias) {
+		this.conferencias = conferencias;
+	}
+
+	public ConferenciasFacade getConfFacade() {
+		return confFacade;
+	}
+
+	public void setConfFacade(ConferenciasFacade confFacade) {
+		this.confFacade = confFacade;
+	}
+	
+	
+}

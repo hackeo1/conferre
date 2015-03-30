@@ -24,7 +24,7 @@ public class EspacioDAO implements GenericDAO {
 		
 		try {
 			esp = (EspacioTO) parametro;
-			PreparedStatement prep = conn.prepareStatement("INSERT INTO conferencias values(?,?)");
+			PreparedStatement prep = conn.prepareStatement("INSERT INTO espacio values(?,?)");
 			prep.setString(1, esp.getCode());
 			prep.setString(2, esp.getId());
 			int resultado = prep.executeUpdate();
@@ -37,20 +37,37 @@ public class EspacioDAO implements GenericDAO {
 
 	@Override
 	public Collection<GenericDTO> read(GenericDTO parametros) {
-		// TODO Auto-generated method stub
-		return null;
+		Collection<GenericDTO> conf = null;
+		/*
+		 * pedir de base de datos quienes cumplan con los parametros
+		 * 
+		 */
+		return conf;
 	}
 
 	@Override
-	public GenericDTO update(GenericDTO nuevoObjeto) {
-		// TODO Auto-generated method stub
-		return null;
+	public GenericDTO update(GenericDTO nuevoObjeto, GenericDTO parametros) {
+		EspacioTO conf = (EspacioTO) nuevoObjeto;
+		/*
+		 * busca por parametros y actualizar en base de datos a nuevo Objeto.
+		 */
+		return conf;
 	}
 
 	@Override
 	public int delete(GenericDTO objetoaBorrar) {
-		// TODO Auto-generated method stub
-		return 0;
+		/*
+		 * busca por objetoBorrar y eliminar en base de datos.
+		 */
+		return 1;
+	}
+	
+	public Collection<GenericDTO> readAll() {
+		Collection<GenericDTO> result= null; 
+		/*
+		 * busca todos lo datos de Espacios y los devuelve.
+		 */
+		return result;
 	}
 
 }

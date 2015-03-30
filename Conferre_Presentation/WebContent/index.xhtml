@@ -11,9 +11,21 @@
 
 <h:body>
 
- <p:selectOneListbox value="#{espaciosListView.espacio}" >
- 	<f:selectItems value="#{espaciosListView.espacios}" var="esp" 
+ <p:selectOneListbox value="#{ListEspaciosView.espacio}" >
+ 	<f:selectItems value="#{ListEspaciosView.espacios}" var="esp" 
  		itemLabel="esp.code" itemValue="esp.id"  >
+ 	</f:selectItems>
+ </p:selectOneListbox>
+ 
+  <p:selectOneListbox value="#{ListSillasView.silla}" >
+ 	<f:selectItems value="#{ListSillaView.sillas}" var="esp" 
+ 		itemLabel="esp.position" itemValue="esp.id"  >
+ 	</f:selectItems>
+ </p:selectOneListbox>
+ 
+   <p:selectOneListbox value="#{ListConferenciaView.conferencia}" >
+ 	<f:selectItems value="#{ListConferenciaView.conferencias}" var="esp" 
+ 		itemLabel="esp.nombre" itemValue="esp.id"  >
  	</f:selectItems>
  </p:selectOneListbox>
 

@@ -43,20 +43,37 @@ public class ConferenciaDAO implements GenericDAO {
 
 	@Override
 	public Collection<GenericDTO> read(GenericDTO parametros) {
-		// TODO Auto-generated method stub
-		return null;
+		Collection<GenericDTO> conf = null;
+		/*
+		 * pedir de base de datos quienes cumplan con los parametros
+		 * 
+		 */
+		return conf;
 	}
 
 	@Override
-	public GenericDTO update(GenericDTO nuevoObjeto) {
-		// TODO Auto-generated method stub
-		return null;
+	public GenericDTO update(GenericDTO nuevoObjeto, GenericDTO parametros) {
+		ConferenciaTO conf = (ConferenciaTO) nuevoObjeto;
+		/*
+		 * busca por parametros y actualizar en base de datos a nuevo Objeto.
+		 */
+		return conf;
 	}
 
 	@Override
 	public int delete(GenericDTO objetoaBorrar) {
-		// TODO Auto-generated method stub
-		return 0;
+		/*
+		 * busca por objetoBorrar y eliminar en base de datos.
+		 */
+		return 1;
+	}
+	
+	public Collection<GenericDTO> readAll() {
+		Collection<GenericDTO> result= null; 
+		/*
+		 * busca todos lo datos de Conferencias y los devuelve.
+		 */
+		return result;
 	}
 
 }

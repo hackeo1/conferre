@@ -1,0 +1,15 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import java.util.List;
+
+import co.com.eafit.conferre.data.to.ConferenciaTO;
+
+public interface ConferenciasFacade {
+	public ConferenciaTO crearConferencia(ConferenciaTO conferencia);
+	
+	public List<ConferenciaTO> obtenerConferencias();
+	
+	public Conferencia toConferencia(ConferenciaTO confe); 
+	
+	
+}

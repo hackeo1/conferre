@@ -6,7 +6,8 @@ public interface GenericDAO {
 	
 	public GenericDTO create(GenericDTO parametro);
 	public Collection<GenericDTO> read(GenericDTO parametros);
-	public GenericDTO update(GenericDTO nuevoObjeto);
+	public Collection<GenericDTO> readAll();
+	public GenericDTO update(GenericDTO nuevoObjeto,GenericDTO parametros);
 	public int delete(GenericDTO objetoaBorrar);
 	
 }

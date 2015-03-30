@@ -1,0 +1,42 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import java.util.UUID;
+
+import co.com.eafit.conferre.conferencias.data.dac.ConferenciaDAO;
+import co.com.eafit.conferre.conferencias.data.dac.EspacioDAO;
+import co.com.eafit.conferre.conferencias.data.factory.FactoryDAO;
+import co.com.eafit.conferre.data.to.ConferenciaTO;
+import co.com.eafit.conferre.data.to.EspacioTO;
+import co.com.eafit.conferre.generics.GenericDTO;
+import co.com.eafit.conferre.generics.UnitOfWork;
+import co.com.eafit.conferre.support.ExceptionUnitOfWork;
+import co.com.eafit.conferre.support.ExceptionValidation;
+
+public class BookEspacionUseCase implements UnitOfWork {
+
+	@Override
+	public GenericDTO execute(GenericDTO parametros) throws ExceptionUnitOfWork {
+		EspacioTO espacioTO = (EspacioTO) parametros;
+		EspacioTO resultado = null;
+		try {
+			validarDatosConferencia(espacioTO);
+			EspacioDAO espacioDAO = FactoryDAO.createEspacioDAO();
+			UUID id = UUID.randomUUID();
+			espacioTO.setId(id.toString());
+			resultado = (EspacioTO) espacioDAO.create(espacioTO);
+			
+		} catch (ExceptionValidation e) {
+			throw new ExceptionUnitOfWork(e);
+		}
+		
+		private void validarDatosEspacio(EspacioTO conferenciaTO) throws ExceptionValidation{
+			if(conferenciaTO.getNombre() == null){
+				throw new ExceptionValidation("El nombre de la conferencia no puede ser nulo");
+			}
+			
+		}
+		
+		return resultado;
+	}
+
+}

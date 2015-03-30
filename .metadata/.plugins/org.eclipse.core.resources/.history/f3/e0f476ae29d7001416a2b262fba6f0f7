@@ -1,0 +1,125 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import java.util.List;
+
+import co.com.eafit.conferre.conferencia.web.model.Conferencia;
+import co.com.eafit.conferre.conferencia.web.model.Espacio;
+import co.com.eafit.conferre.conferencia.web.model.Silla;
+import co.com.eafit.conferre.data.to.ConferenciaTO;
+import co.com.eafit.conferre.data.to.EspacioTO;
+import co.com.eafit.conferre.data.to.SillaTO;
+import co.com.eafit.conferre.generics.GenericDTO;
+import co.com.eafit.conferre.support.ExceptionUnitOfWork;
+
+public class ConferreBusinessFacade implements ConferenciasFacade {
+
+	@Override
+	public ConferenciaTO crearConferencia(ConferenciaTO conferencia) throws ExceptionUnitOfWork {
+		CreateConferenciaUseCase useCase = new CreateConferenciaUseCase();
+		GenericDTO param = conferencia;
+		ConferenciaTO result = (ConferenciaTO) useCase.execute(param);
+		return result;
+	}
+
+	@Override
+	public SillaTO comprarSilla(SillaTO silla) throws ExceptionUnitOfWork {
+		BuySillaUseCase useCase = new BuySillaUseCase();
+		GenericDTO param = silla;
+		SillaTO result = (SillaTO) useCase.execute(param);
+		return result;
+	}
+
+	@Override
+	public EspacioTO reservarEspacio(EspacioTO espacio) throws ExceptionUnitOfWork{
+		BookEspacionUseCase useCase = new BookEspacionUseCase();
+		GenericDTO param = espacio;
+		EspacioTO resul = (EspacioTO) useCase.execute(param);
+		return resul;
+	}
+
+	@Override
+	public Conferencia obtenerConferencia(ConferenciaTO conferencia) throws ExceptionUnitOfWork {
+		FindConferenciaUseCase useCase = new FindConferenciaUseCase();
+		GenericDTO param = conferencia;
+		ConferenciaTO resultDTO = (ConferenciaTO) useCase.execute(param);
+		Conferencia result = toConferencia(resultDTO);
+		return result;
+	}
+
+	@Override
+	public Silla obtenerSilla(SillaTO silla) throws ExceptionUnitOfWork {
+		FindSillaUseCase useCase = new FindSillaUseCase();
+		GenericDTO param = silla;
+		SillaTO resultDTO = (SillaTO) useCase.execute(param);
+		Silla result = toSilla(resultDTO);
+		return result;
+	}
+
+	@Override
+	public Espacio obtenerEspacio(EspacioTO espacio) throws ExceptionUnitOfWork {
+		FindSillaUseCase useCase = new FindSillaUseCase();
+		GenericDTO param = espacio;
+		EspacioTO resultDTO = (EspacioTO) useCase.execute(param);
+		Espacio result = toEspacio(resultDTO);
+		return result;
+	}
+
+	@Override
+	public List<Conferencia> obtenerConferencias() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Silla> obtenerSillas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Espacio> obtenerEspacios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ConferenciaTO toConferenciaTO(Conferencia confe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Conferencia toConferencia(ConferenciaTO confe) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SillaTO toSillaTO(Silla silla) {
+		SillaTO result = new SillaTO();
+		result.setId(silla.getId());
+		result.setPosition(silla.getPosition());
+		return result;
+	}
+
+	@Override
+	public Silla toSilla(SillaTO silla) {
+		Silla result = new Silla();
+		result.setId(silla.getId());
+		result.setPosition(silla.getPosition());
+		return result;
+	}
+
+	@Override
+	public EspacioTO toEspacioTO(Espacio espacio) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Espacio toEspacio(EspacioTO espacio) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

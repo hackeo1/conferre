@@ -7,17 +7,18 @@ import javax.faces.bean.ManagedBean;
 
 import co.com.eafit.conferre.conferencia.web.model.Espacio;
 import co.com.eafit.conferre.conferencias.business.ConferenciasFacade;
+import co.com.eafit.conferre.support.ExceptionUnitOfWork;
 
 @ManagedBean
 public class ListEspaciosView {
 	private List<Espacio> espacios;
 	private ConferenciasFacade confFacade;
+	private Espacio espacio;
 	
 	@PostConstruct
-	public void init(){
-		espacios = confFacade.obtenerEspacios();
+	public void init() throws ExceptionUnitOfWork{
+		espacios = (List<Espacio>) confFacade.obtenerEspacios();
 	}
-	
 	
 	public List<Espacio> getEspacios() {
 		return espacios;
@@ -31,6 +32,9 @@ public class ListEspaciosView {
 	public void setEspacio(Espacio espacio) {
 		this.espacio = espacio;
 	}
-	private Espacio espacio;
+	public ConferenciasFacade getConfFacade() {
+		return confFacade;
+	}
+	
 	
 }

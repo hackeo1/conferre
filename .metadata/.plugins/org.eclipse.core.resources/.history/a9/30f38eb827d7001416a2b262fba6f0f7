@@ -1,0 +1,44 @@
+package co.com.eafit.conferre.conferencias.business;
+
+import java.util.List;
+
+import co.com.eafit.conferre.conferencia.web.model.Conferencia;
+import co.com.eafit.conferre.conferencia.web.model.Espacio;
+import co.com.eafit.conferre.conferencia.web.model.Silla;
+import co.com.eafit.conferre.data.to.ConferenciaTO;
+import co.com.eafit.conferre.data.to.EspacioTO;
+import co.com.eafit.conferre.data.to.SillaTO;
+
+public interface ConferenciasFacade {
+	public ConferenciaTO crearConferencia(ConferenciaTO conferencia);
+	
+	public SillaTO comprarSilla(SillaTO silla);
+	
+	public EspacioTO reservarEspacio(ConferenciaTO conferencia,EspacioTO espacio);
+	
+	public Conferencia obtenerConferencia(ConferenciaTO conferencia);
+	
+	public Silla obtenerSilla(SillaTO silla);
+	
+	public Espacio obtenerEspacio(EspacioTO espacio);
+	
+	public List<Conferencia> obtenerConferencias();
+	
+	public List<Silla> obtenerSillas();
+	
+	public List<Espacio> obtenerEspacios();
+		
+	public ConferenciaTO toConferenciaTO(Conferencia confe);
+	
+	public Conferencia toConferencia(ConferenciaTO confe); 
+	
+	public SillaTO toSillaTO(Silla silla); 
+	
+	public Silla toSilla(SillaTO silla); 
+	
+	public EspacioTO toEspacioTO(Espacio espacio); 
+	
+	public Espacio toEspacio(EspacioTO espacio); 
+	
+	
+}
